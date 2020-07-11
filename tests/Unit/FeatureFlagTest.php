@@ -13,7 +13,7 @@ class FeatureFlagTest extends TestCase {
     /**
      * @throws \FeatureFlag\Exceptions\Exception
      */
-    public function testInit(): void {
+    public function testInit() {
         $firstFlags = [
             'first_flag' => false,
             'second_flag' => false,
@@ -36,7 +36,7 @@ class FeatureFlagTest extends TestCase {
      * @throws FlagNotFound
      * @throws \FeatureFlag\Exceptions\Exception
      */
-    public function testAddSource(): void {
+    public function testAddSource() {
         $firstFlags = [
             'first_flag' => false,
             'second_flag' => true,
@@ -64,7 +64,7 @@ class FeatureFlagTest extends TestCase {
      * @throws FlagNotFound
      * @throws \FeatureFlag\Exceptions\Exception
      */
-    public function testAddSourceReversive(): void {
+    public function testAddSourceReversive() {
         $firstFlags = [
             'first_flag' => false,
         ];
@@ -86,7 +86,7 @@ class FeatureFlagTest extends TestCase {
     /**
      * @throws FlagNotFound
      */
-    public function testFlagNotFound(): void {
+    public function testFlagNotFound() {
         $flagService = new FeatureFlag();
         $this->expectException(FlagNotFound::class);
         $flagService->enabled('first_flag');
@@ -96,7 +96,7 @@ class FeatureFlagTest extends TestCase {
      * @throws FlagNotFound
      * @throws \FeatureFlag\Exceptions\InvalidDefaultValue
      */
-    public function testDefaultFlagValue(): void {
+    public function testDefaultFlagValue() {
         $flagService = new FeatureFlag();
 
         $flagService->setDefaultValue(true);
@@ -115,7 +115,7 @@ class FeatureFlagTest extends TestCase {
      * @throws FlagNotFound
      * @throws InvalidDefaultValue
      */
-    public function testSetDefaultFlagInvalidType(): void {
+    public function testSetDefaultFlagInvalidType() {
         $flagService = new FeatureFlag();
         $this->expectException(InvalidDefaultValue::class);
         $flagService->setDefaultValue([]);
@@ -124,7 +124,7 @@ class FeatureFlagTest extends TestCase {
     /**
      * @throws \FeatureFlag\Exceptions\Exception
      */
-    public function testEnabledWithDependencies(): void {
+    public function testEnabledWithDependencies() {
         $flags = [
             'first_flag' => true,
             'second_flag' => false,

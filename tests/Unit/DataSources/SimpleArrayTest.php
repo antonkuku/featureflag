@@ -12,7 +12,7 @@ class SimpleArrayTest extends TestCase {
     /**
      * @throws Exception
      */
-    public function testSuccessful(): void {
+    public function testSuccessful() {
         $flags = [
             'first_flag' => true,
         ];
@@ -46,7 +46,7 @@ class SimpleArrayTest extends TestCase {
      * @param array $flags
      * @throws Exception
      */
-    public function testInitFail(array $flags): void {
+    public function testInitFail(array $flags) {
         $this->expectException(Exception::class);
         new SimpleArray($flags);
     }
@@ -54,7 +54,7 @@ class SimpleArrayTest extends TestCase {
     /**
      * @throws Exception
      */
-    public function testCastToTrue(): void {
+    public function testCastToTrue() {
         $list = [
             'a' => true,
             'b' => 'true',
@@ -72,7 +72,7 @@ class SimpleArrayTest extends TestCase {
     /**
      * @throws Exception
      */
-    public function testCastToFalse(): void {
+    public function testCastToFalse() {
         $list = [
             'a' => false,
             'b' => 'false',
@@ -90,7 +90,7 @@ class SimpleArrayTest extends TestCase {
     /**
      * @throws Exception
      */
-    public function testAll(): void {
+    public function testAll() {
         $list = [
             'a' => true,
             'b' => 1,
@@ -109,7 +109,7 @@ class SimpleArrayTest extends TestCase {
     /**
      * @throws Exception
      */
-    public function testFlagNotFound(): void {
+    public function testFlagNotFound() {
         $list = [];
         $ds = new SimpleArray($list);
         $this->expectException(FlagNotFound::class);
