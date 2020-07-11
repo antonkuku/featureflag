@@ -19,7 +19,7 @@
     "mockery/mockery": "^1.4"
   },
   "suggest": {
-    "ext-json": "Required for JSON data source",
+    "ext-json": "Required for remote JSON data source",
     "ext-curl": "Required for remote JSON data source"
   },
   "autoload": {
