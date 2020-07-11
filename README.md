@@ -8,6 +8,7 @@ The library allows to add multiple data sources (in case you want to have config
 
 Just for example I've some sources:
  * SimpleArray
+ * SimpleArrayWritable - an example for writable data sources
  * SimpleObject
  * RemoteJsonCurl
  
@@ -15,6 +16,11 @@ To add another data source you need to create a new class and implement \Feature
  * exists - to know that selected flag exists 
  * get - to get flag value
  * all - to return available flags from data source
+ 
+In case you need to add/update/delete flags values you can implement \FeatureFlag\Contracts\WritableSourceInterface with 3 methods:
+ * add
+ * update
+ * delete
 
 #### Examples
 
