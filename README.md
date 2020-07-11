@@ -58,3 +58,6 @@ $service = new \FeatureFlag\FeatureFlag([$firstDs, $secondDs]);
 $service->enabled('second_flag'); // false
 $service->enabled('first_flag'); // false
 ```
+
+#### Installation
+`composer require antonkuku/featureflag`
